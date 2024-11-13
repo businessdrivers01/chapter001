@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply 
+        font-bold 
+        text-center 
+        text-xl 
+        md:text-2xl 
+        py-4
+        px-8
+        text-white 
+        bg-[#BE2026] 
+        rounded 
+        transition-colors 
+        duration-300 
+        hover:bg-[#a6191e] 
+        focus:outline-none 
+}
