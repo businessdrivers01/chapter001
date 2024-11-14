@@ -19,7 +19,7 @@ const Careers = lazy(() => import('@src/Pages/Careers'));
 // Loading component for suspense fallback
 const PageLoader: FC = () => (
     <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-navy-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
     </div>
 );
 
