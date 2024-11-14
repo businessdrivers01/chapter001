@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
-import { Image, TrendingUp, Hash, Search, Laptop, Speaker, Video, User, Shield, BarChart } from 'lucide-react';
+import { Image, TrendingUp, Hash, Search, Laptop, Speaker, Video, User, Shield, BarChart, FileText } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 
 const services = [
@@ -58,37 +58,44 @@ const services = [
     {
         id: 6,
         title: "Conversion Rate Optimization (CRO)",
-        icon: <TrendingUp />, // Add an appropriate icon
+        icon: <TrendingUp />, 
         description: "Our CRO services focus on optimizing your website to increase conversions and improve user experience.",
         items: ["A/B testing", "User experience optimization", "Funnel analysis", "Conversion tracking"]
     },
     {
         id: 7,
         title: "Video Marketing",
-        icon: <Video />, // Add an appropriate icon
+        icon: <Video />, 
         description: "Our video marketing services help you engage your audience with visually compelling content.",
         items: ["Video content creation", "YouTube optimization", "Video ads", "Animated videos"]
     },
     {
         id: 8,
         title: "Influencer and Affiliate Marketing",
-        icon: <User />, // Add an appropriate icon
+        icon: <User />, 
         description: "Our influencer and affiliate marketing services connect your brand with industry leaders and affiliates.",
         items: ["Influencer outreach", "Affiliate program setup", "Partnership management", "Brand collaborations"]
     },
     {
         id: 9,
         title: "Online Reputation Management (ORM)",
-        icon: <Shield />, // Add an appropriate icon
+        icon: <Shield />, 
         description: "Our ORM services focus on protecting and enhancing your online reputation.",
         items: ["Review monitoring", "Crisis management", "Reputation repair", "Brand image building"]
     },
     {
         id: 10,
         title: "Analytics and Reporting",
-        icon: <BarChart />, // Add an appropriate icon
+        icon: <BarChart />, 
         description: "Our analytics and reporting services provide insights into your business's digital performance.",
         items: ["Website analytics", "Campaign performance", "User behavior analysis", "Data-driven strategy development"]
+    },
+    {
+        id: 11,
+        title: "Content Marketing",
+        icon: <FileText />, 
+        description: "Our content marketing services help your brand engage and inform audiences through high-quality, valuable content.",
+        items: ["Content strategy development", "Blog and article writing", "Video content creation", "Social media content", "SEO-optimized content"]
     }
 ];
 
@@ -152,10 +159,10 @@ export default function Services() {
                             onClick={() => setExpandedId(expandedId === service.id ? null : service.id)}
                         >
                             <div className="flex items-center mb-4">
-                                <div className="text-4xl text-red-500 font-bold mr-4">
+                                <div className="text-4xl text-white font-bold mr-4">
                                     {service.icon}
                                 </div>
-                                <h2 className="text-2xl font-bold text-red-500">
+                                <h2 className="text-2xl font-bold text-white">
                                     {service.title}
                                 </h2>
                             </div>

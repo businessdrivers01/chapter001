@@ -131,7 +131,7 @@ const Navbar: FC = (): JSX.Element => {
                     <X size={24} />
                 </button>
 
-                <div className="flex flex-col items-center p-8 pt-20 space-y-6">
+                <div className="flex flex-col items-center p-8 pt-20 space-y-6 pb-6">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.path}
@@ -149,9 +149,9 @@ const Navbar: FC = (): JSX.Element => {
                     ))}
                 </div>
                 <div className='px-8'>
-                    <NavLink to={"/app/services"} onClick={() => setIsOpen(false)}>
+                    <NavLink to={"/app/contact"} onClick={() => setIsOpen(false)}>
                         <button className='btn w-full'>
-                            Get Started
+                          Contact
                         </button>
                     </NavLink>
 

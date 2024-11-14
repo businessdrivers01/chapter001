@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, XCircle } from 'lucide-react'; // Import icons from lucide-react
+import { CheckCircle, XCircle, Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react'; // Import relevant icons from lucide-react
 
 interface FormData {
   name: string;
@@ -15,6 +15,15 @@ interface Errors {
   email?: string;
   message?: string;
 }
+
+const contactDetails = [
+  { type: 'phone', icon: Phone, content: '+92-303-525-6390' },
+  { type: 'email', icon: Mail, content: 'Info@chapter-001.com' },
+  { type: 'instagram', icon: Instagram, content: 'https://www.instagram.com/chapter001pakistann' },
+  { type: 'facebook', icon: Facebook, content: 'https://www.facebook.com/share/18vJJpsjnF/' },
+  { type: 'youtube', icon: Youtube, content: 'https://youtube.com/@revealsecrets2.0' },
+  { type: 'address', icon: MapPin, content: 'Chapter-001, 2nd Floor, Business Hub DHA Phase 8, Lahore, Pakistan' },
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
@@ -33,7 +42,6 @@ export default function Contact() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name as keyof Errors]) {
       setErrors((prev) => ({ ...prev, [name as keyof Errors]: '' }));
     }
@@ -52,8 +60,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
-      // Handle form submission with Formspree
-      const response = await fetch(`https://formspree.io/f/YOUR_FORM_ID`, { // Add your Formspree form ID here
+      const response = await fetch(`https://formspree.io/f/mbljyqzz`, { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,11 +68,9 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        console.log('Form submitted:', formData);
         setPopup({ success: true, message: 'Thank you for reaching out, We will get back to you soon!', visible: true });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        console.error('Form submission error:', response.statusText);
         setPopup({ success: false, message: 'Something went wrong. Please try later.', visible: true });
       }
     }
@@ -101,12 +106,7 @@ export default function Contact() {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
-            <motion.div
-              variants={inputVariants}
-              whileFocus="focus"
-              whileTap="focus"
-              className="mb-4"
-            >
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
               <label htmlFor="name" className="sr-only">
                 Name
               </label>
@@ -122,12 +122,7 @@ export default function Contact() {
               />
               {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name}</p>}
             </motion.div>
-            <motion.div
-              variants={inputVariants}
-              whileFocus="focus"
-              whileTap="focus"
-              className="mb-4"
-            >
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
               <label htmlFor="email-address" className="sr-only">
                 Email address
               </label>
@@ -144,11 +139,7 @@ export default function Contact() {
               />
               {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
             </motion.div>
-            <motion.div
-              variants={inputVariants}
-              whileFocus="focus"
-              whileTap="focus"
-            >
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus">
               <label htmlFor="message" className="sr-only">
                 Message
               </label>
@@ -167,47 +158,59 @@ export default function Contact() {
           </div>
 
           <div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              type="submit"
-              className="btn !w-full "
-            >
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" className="btn !w-full">
               Send Message
             </motion.button>
           </div>
         </form>
-      </motion.div>
+
+        {/* Contact Information */}
+        <div className="mt-8 space-y-4 text-white text-opacity-80 text-sm">
+          {contactDetails.map((contact, index) => (
+            <div key={index} className="flex items-center space-x-3">
+              <contact.icon className="min-w-6 min-h-6 text-white" />
+              <a
+                href={contact.type === 'email' ? `mailto:${contact.content}` : contact.type === 'phone' ? `tel:${contact.content}` : contact.type === 'address' ? "https://maps.app.goo.gl/kbkeoHULGFw7wuTV7?g_st=ac" : contact.content}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline duration-300"
+              >
+                {
+                  contact.type === "youtube" ? "YouTube"
+                    : contact.type === "facebook" ? "Facebook"
+                      : contact.type === "instagram" ? "Instagram"
+
+
+                        : contact.content}
+              </a>
+            </div>
+          ))}
+        </div>
+      </motion.div >
 
       {/* Popup Notification */}
-      {popup.visible && (
-        <motion.div
-          variants={popupVariants}
-          initial="hidden"
-          animate="visible"
-          className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50`}
-        >
-          <motion.div className="bg-white p-6 rounded-lg shadow-lg flex items-center flex-col space-y-4">
-            {popup.success ? (
-              <>
-                <CheckCircle className="w-6 h-6 text-green-500 mr-2" />
-                <p>{popup.message}</p>
-              </>
-            ) : (
-              <>
-                <XCircle className="w-6 h-6 text-red-500 mr-2" />
-                <p>{popup.message}</p>
-              </>
-            )}
-            <button
-              onClick={() => setPopup({ ...popup, visible: false })}
-              className="mx-auto btn !w-full !py-2"
-            >
-              OK
-            </button>
+      {
+        popup.visible && (
+          <motion.div variants={popupVariants} initial="hidden" animate="visible" className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <motion.div className="bg-white p-6 rounded-lg shadow-lg flex items-center flex-col space-y-4">
+              {popup.success ? (
+                <>
+                  <CheckCircle className="w-6 h-6 text-green-500 mr-2" />
+                  <p>{popup.message}</p>
+                </>
+              ) : (
+                <>
+                  <XCircle className="w-6 h-6 text-red-500 mr-2" />
+                  <p>{popup.message}</p>
+                </>
+              )}
+              <button onClick={() => setPopup({ ...popup, visible: false })} className="btn !bg-red-500 hover:!bg-red-600 text-white">
+                Close
+              </button>
+            </motion.div>
           </motion.div>
-        </motion.div>
-      )}
-    </div>
+        )
+      }
+    </div >
   );
 }

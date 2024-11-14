@@ -10,30 +10,49 @@ interface Milestone {
 
 const milestones: Milestone[] = [
   {
-    year: '2015',
-    title: 'Founding of Chapter-001',
-    description: `Chapter-001 was founded with a vision to lead innovative solutions in business and social impact, beginning a journey marked by determination and ambition.`,
-    image: '/founding.jpg'
+    year: '2018',
+    title: 'Foundation and Vision',
+    description: `Established as a creative agency dedicated to impactful design and digital storytelling. Set the foundation with a passionate team and a commitment to helping brands grow.`,
+    image: '/logo-white-updated.png'
   },
   {
-    year: '2018',
-    title: 'Expansion and Growth',
-    description: `Successfully expanded into new industries, introducing groundbreaking projects and building a dedicated team that shared a commitment to excellence.`,
-    image: '/expansion.jpg'
+    year: '2019',
+    title: 'Early Growth and Portfolio Building',
+    description: `Secured initial projects and gained traction, building a diverse portfolio of clients. Expanded our team and capabilities, enhancing our service offerings.`,
+    image: '/logo-white-updated.png'
+  },
+  {
+    year: '2020',
+    title: 'Adapting to Global Changes',
+    description: `Navigated the challenges of the pandemic by shifting to remote work and expanding digital services. Supported clients in maintaining a strong online presence during a challenging year.`,
+    image: '/logo-white-updated.png'
   },
   {
     year: '2021',
-    title: 'Recognition and Awards',
-    description: `Recognized as a leader in industry innovation, receiving accolades and awards that celebrated the impact of our work on both local and international levels.`,
-    image: '/awards.jpg'
+    title: 'Peak Performance and Industry Recognition',
+    description: `Gained recognition for our creativity and commitment, completing milestone projects and establishing strategic partnerships. Built a reputation for delivering quality and creativity across various industries.`,
+    image: '/logo-white-updated.png'
   },
   {
-    year: 'Present',
-    title: 'Continuing the Legacy',
-    description: `With a focus on the future, Chapter-001 remains committed to growth, innovation, and making a positive difference in the communities we serve.`,
-    image: '/future.jpg'
+    year: '2022',
+    title: 'Setback and Reflection',
+    description: `Experienced operational challenges that prompted us to refine our focus and streamline our processes. This year’s hurdles led to valuable insights, setting the stage for a stronger comeback.`,
+    image: '/logo-white-updated.png'
+  },
+  {
+    year: '2023',
+    title: 'Major Setback and Reinvention',
+    description: `Faced a significant downturn that tested our agency’s resilience and adaptability. Took this period as an opportunity to critically evaluate our business model, restructure operations, and redefine our core values. Learned valuable lessons from this challenging year, emerging with a renewed strategy and a clearer vision for the future.`,
+    image: '/logo-white-updated.png'
+  },
+  {
+    year: '2024',
+    title: 'Recovery and New Beginnings',
+    description: `Leveraged the hard-earned lessons from 2023 to reestablish our presence in the market with a fresh, client-focused approach. Reaffirmed our commitment to innovation, creativity, and building long-term client relationships as we look toward sustained growth.`,
+    image: '/logo-white-updated.png'
   }
 ];
+
 
 const Legacy: React.FC = () => {
   return (
@@ -58,12 +77,12 @@ const Legacy: React.FC = () => {
               <img
                 src={milestone.image}
                 alt={milestone.title}
-                className="w-48 h-48 object-cover rounded-lg mb-4 md:mb-0 md:mr-6"
+                className="w-32 h-32 object-contain rounded-lg mb-4 md:mb-0 md:mr-6"
               />
             )}
             {/* Milestone details */}
             <div>
-              <h2 className="text-2xl font-semibold text-cyan-400 mb-2">{milestone.year}</h2>
+              <h2 className="text-2xl font-bold text-red-500 mb-2">{milestone.year}</h2>
               <h3 className="text-xl font-bold mb-3">{milestone.title}</h3>
               <p className="text-gray-300">{milestone.description}</p>
             </div>

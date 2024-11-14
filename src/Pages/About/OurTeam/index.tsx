@@ -18,10 +18,6 @@ const team: TeamMember[] = [
     name: 'Moeez Athar', role: `CREATIVE HEAD CHAPTER-001,
      CO FOUNDER 9GIGVISION GROUP`, image: '/moeez.jpg'
   },
-  {
-    name: 'Shanzay Athar', role: `Operation head at chapter-001,
-     Masters of publications strategy`, image: '/shanzay.jpg'
-  },
 
 ];
 
@@ -34,12 +30,10 @@ const OurTeam: React.FC = () => {
       className="min-h-screen py-12 px-4 sm:px-6 lg:px-8"
     >
       <h1 className="text-5xl font-extrabold text-center text-white mb-12">
-        Our Team
+        Master Minds Behind The Chapter
       </h1>
-      <h2 className="text-3xl  text-center text-white mb-12">
-        The Masterminds
-      </h2>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8">
+
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-x-16">
         {team.map((member, index) => (
           <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg">
             <img
