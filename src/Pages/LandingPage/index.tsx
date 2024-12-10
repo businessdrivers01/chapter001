@@ -82,7 +82,7 @@ export default function LandingPage() {
 
                             {/* Button Link */}
                             <div className="flex justify-center py-4">
-                                <NavLink to={"/app/services"}>
+                                <NavLink to={"/services"}>
                                     <Button title="Explore Now" className="py-8" />
                                 </NavLink>
                             </div>

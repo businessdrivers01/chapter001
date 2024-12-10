@@ -100,7 +100,7 @@ const Careers: React.FC = () => {
             </motion.div>
 
             <div className="flex justify-center py-12">
-                <NavLink to={"/app/contact"}>
+                <NavLink to={"/contact"}>
                     <button className="btn">Apply Now</button>
                 </NavLink>
             </div>

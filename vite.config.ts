@@ -7,13 +7,14 @@ export default defineConfig({
   server: {
     fs: {
       strict: true
-    }
+    },
   },
   resolve: {
     alias: {
       '@src': path.resolve(__dirname, './src'),
     },
   },
+  
 
 
 })

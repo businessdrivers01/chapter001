@@ -10,7 +10,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-    { name: 'Home', path: 'home' },
+    { name: 'Home', path: '' },
     { name: 'About', path: 'about' },
     { name: 'Services', path: 'services' },
     { name: 'Blogs', path: 'blogs' },
@@ -57,7 +57,7 @@ const Navbar: FC = (): JSX.Element => {
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <div className="flex-shrink-0">
-                            <NavLink to="/app/home">
+                            <NavLink to="/">
                                 <img
                                     src="/logo-white-updated.png"
                                     alt="Logo"
@@ -80,7 +80,7 @@ const Navbar: FC = (): JSX.Element => {
 
                         {/* CTA Button */}
                         <div className='hidden md:block'>
-                            <NavLink to={"/app/contact"}>
+                            <NavLink to={"/contact"}>
                                 <Button
                                     title="Contact Us" />
 
@@ -149,7 +149,7 @@ const Navbar: FC = (): JSX.Element => {
                     ))}
                 </div>
                 <div className='px-8'>
-                    <NavLink to={"/app/contact"} onClick={() => setIsOpen(false)}>
+                    <NavLink to={"/contact"} onClick={() => setIsOpen(false)}>
                         <button className='btn w-full'>
                           Contact
                         </button>

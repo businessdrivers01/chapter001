@@ -1,15 +1,18 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Dispatch, SetStateAction } from 'react';
 
-const TwoPanels: React.FC = () => {
-    const navigate = useNavigate();
+interface TwoPanelsProps {
+    setIsLandingPageVisible: Dispatch<SetStateAction<boolean>>;
+}
+
+const TwoPanels: React.FC<TwoPanelsProps> = ({ setIsLandingPageVisible }) => {
 
     const handleRightLogoClick = () => {
         window.open('https://www.businessdrivers01.com/', '_blank'); // Replace with your actual external link
     };
 
     const handleLeftLogoClick = () => {
-        navigate('/app'); // Redirects to the current website's home page
+        setIsLandingPageVisible(true)
     };
 
     return (

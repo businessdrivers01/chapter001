@@ -188,7 +188,7 @@ export default function Services() {
 
                             {/* Button appears on hover */}
                             <div className="absolute inset-0 flex items-center justify-center bg-navy-500 bg-opacity-80 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                <NavLink to="/app/contact">
+                                <NavLink to="/contact">
                                     <button className="btn ">
                                         Contact
                                     </button>
@@ -199,7 +199,7 @@ export default function Services() {
                 </motion.div>
             </motion.div>
             <div className="flex justify-center py-12">
-                <NavLink to="/app/contact">
+                <NavLink to="/contact">
                     <button className="btn !px-24">
                         Make Your Customized Plan
                     </button>
