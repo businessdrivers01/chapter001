@@ -7,13 +7,20 @@ import { CheckCircle, XCircle, Phone, Mail, MapPin, Instagram, Facebook, Youtube
 interface FormData {
   name: string;
   email: string;
+  phone: string;
+  service: string;
   message: string;
+  website: string;
+
 }
 
 interface Errors {
   name?: string;
   email?: string;
+  phone?: string;
+  service?: string;
   message?: string;
+  website?: string;
 }
 
 const contactDetails = [
@@ -27,9 +34,12 @@ const contactDetails = [
 
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
-    name: '',
-    email: '',
-    message: '',
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+    website: ""
   });
 
   const [errors, setErrors] = useState<Errors>({});
@@ -52,7 +62,13 @@ export default function Contact() {
     if (!formData.name.trim()) newErrors.name = 'Name is required';
     if (!formData.email.trim()) newErrors.email = 'Email is required';
     else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email is invalid';
+    if (!formData.phone.trim()) newErrors.phone = 'Phone is required';
+    else if (!/^\+?[\d\s-]+$/.test(formData.phone)) newErrors.phone = 'Invalid phone number';
+    if (!formData.service.trim()) newErrors.service = 'Service is required';
     if (!formData.message.trim()) newErrors.message = 'Message is required';
+    // if (formData.website && !/^https?:\/\/.*/.test(formData.website)) {
+    //   newErrors.website = 'Invalid website URL';
+    // }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -60,7 +76,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (validateForm()) {
-      const response = await fetch(`https://formspree.io/f/mbljyqzz`, { 
+      const response = await fetch(`https://formspree.io/f/mbljyqzz`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +85,14 @@ export default function Contact() {
       });
       if (response.ok) {
         setPopup({ success: true, message: 'Thank you for reaching out, We will get back to you soon!', visible: true });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+          website: ""
+        });
       } else {
         setPopup({ success: false, message: 'Something went wrong. Please try later.', visible: true });
       }
@@ -106,6 +129,8 @@ export default function Contact() {
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
+
+            {/* Name */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
               <label htmlFor="name" className="sr-only">
                 Name
@@ -120,8 +145,10 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
               />
-              {errors.name && <p className="mt-2 text-sm text-red-600">{errors.name}</p>}
+              {errors.name && <p className="mt-2 text-sm text-red-300">{errors.name}</p>}
             </motion.div>
+
+            {/* Email */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
               <label htmlFor="email-address" className="sr-only">
                 Email address
@@ -137,8 +164,79 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
               />
-              {errors.email && <p className="mt-2 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-2 text-sm text-red-300">{errors.email}</p>}
             </motion.div>
+
+
+
+            {/* Phone */}
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
+              <label htmlFor="phone-number" className="sr-only">
+                Phone Number
+              </label>
+              <input
+                id="phone-number"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 focus:z-10 sm:text-sm"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+              />
+              {errors.phone && <p className="mt-2 text-sm text-red-300">{errors.phone}</p>}
+            </motion.div>
+
+
+
+            {/* Service */}
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
+              <label htmlFor="service-type" className="sr-only">
+                Service Type
+              </label>
+              <input
+                id="service-type"
+                name="service"
+                type="text"
+                autoComplete="off"
+                required
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 focus:z-10 sm:text-sm"
+                placeholder="Service Type"
+                value={formData.service}
+                onChange={handleChange}
+              />
+              {errors.service && <p className="mt-2 text-sm text-red-300">{errors.service}</p>}
+            </motion.div>
+
+
+
+            {/* Website */}
+            <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
+              <label htmlFor="website-link" className="sr-only">
+                Website Link (Optional)
+              </label>
+              <input
+                id="website-link"
+                name="website"
+                type="text"
+                autoComplete="off"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-cyan-500 focus:border-cyan-500 focus:z-10 sm:text-sm"
+                placeholder="Website Link"
+                value={formData.website}
+                onChange={handleChange}
+              />
+              {errors.website && <p className="mt-2 text-sm text-red-300">{errors.website}</p>}
+            </motion.div>
+
+
+
+
+
+
+
+
+            {/* Message */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus">
               <label htmlFor="message" className="sr-only">
                 Message
@@ -153,7 +251,7 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
               ></textarea>
-              {errors.message && <p className="mt-2 text-sm text-red-600">{errors.message}</p>}
+              {errors.message && <p className="mt-2 text-sm text-red-300">{errors.message}</p>}
             </motion.div>
           </div>
 
