@@ -40,19 +40,17 @@ const Routes: FC = (): JSX.Element => {
                         <Layout />
                     }
                 >
-
-                    <>
                         <Route path="" element={<LandingPage />} />
-                        <Route path="about" element={<About />} />
-                        <Route path="services" element={<Services />} />
-                        <Route path="blogs" element={<Blogs />} />
-                        <Route path="careers" element={<Careers />} />
-                        <Route path="contact" element={<Contact />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/services" element={<Services />} />
+                        <Route path="/blogs" element={<Blogs />} />
+                        <Route path="/careers" element={<Careers />} />
+                        <Route path="/contact" element={<Contact />} />
                         {/* 404 route */}
-                        <Route path="404" element={<NotFound />} />
+                        <Route path="/404" element={<NotFound />} />
                         {/* Redirect unknown routes to 404 */}
                         <Route path="*" element={<Navigate to="/404" replace />} />
-                    </>
+
                 </Route>
             </RouterRoutes>
         </Suspense>
