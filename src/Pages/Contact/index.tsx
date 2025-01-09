@@ -127,12 +127,12 @@ export default function Contact() {
             Contact Us
           </motion.h2>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
+        <form className="mt-8 space-y-8" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm space-y-6">
 
             {/* Name */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
-              <label htmlFor="name" className="sr-only">
+              <label htmlFor="name" className="text-sm text-white font-semibold">
                 Name
               </label>
               <input
@@ -150,7 +150,7 @@ export default function Contact() {
 
             {/* Email */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="email-address" className="text-sm text-white font-semibold">
                 Email address
               </label>
               <input
@@ -171,7 +171,7 @@ export default function Contact() {
 
             {/* Phone */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
-              <label htmlFor="phone-number" className="sr-only">
+              <label htmlFor="phone-number" className="text-sm text-white font-semibold">
                 Phone Number
               </label>
               <input
@@ -192,7 +192,7 @@ export default function Contact() {
 
             {/* Service */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
-              <label htmlFor="service-type" className="sr-only">
+              <label htmlFor="service-type" className="text-sm text-white font-semibold">
                 Service Type
               </label>
               <input
@@ -213,7 +213,7 @@ export default function Contact() {
 
             {/* Website */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus" className="mb-4">
-              <label htmlFor="website-link" className="sr-only">
+              <label htmlFor="website-link" className="text-sm text-white font-semibold">
                 Website Link (Optional)
               </label>
               <input
@@ -231,14 +231,9 @@ export default function Contact() {
 
 
 
-
-
-
-
-
             {/* Message */}
             <motion.div variants={inputVariants} whileFocus="focus" whileTap="focus">
-              <label htmlFor="message" className="sr-only">
+              <label htmlFor="message" className="text-sm text-white font-semibold">
                 Message
               </label>
               <textarea
@@ -255,6 +250,7 @@ export default function Contact() {
             </motion.div>
           </div>
 
+          {/* Submit Button */}
           <div>
             <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} type="submit" className="btn !w-full">
               Send Message
