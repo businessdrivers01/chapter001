@@ -130,7 +130,7 @@ export default function About() {
           ))}
         </motion.div>
       </motion.div>
-      <OurTeam />
+{/*       <OurTeam /> */}
       <OurLegacy />
     </div>
   );
