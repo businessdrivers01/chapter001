@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Target, HelpCircle, Award } from 'lucide-react';
-import OurTeam from './OurTeam';
+// import OurTeam from './OurTeam';
 import OurLegacy from './OurLegacy';
 
 export default function About() {
