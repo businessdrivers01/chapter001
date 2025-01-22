@@ -11,34 +11,16 @@ interface Job {
 
 const jobs: Job[] = [
     {
-        title: 'Experienced Ad Manager',
-        location: 'Remote',
-        salary: '35,000 PKR/month',
+        title: 'Google & Meta Ad Manager',
+        location: 'Remote/Office-based (as per company requirements)',
+        salary: 'PKR 100,000 - 150,000 (Based on experience)',
         requirements: [
-            'Proven experience in managing ad campaigns across social media and digital platforms.',
-            'Strong understanding of analytics tools and ad performance metrics.',
-            'Ability to create, monitor, and optimize ad strategies to maximize reach and ROI.'
-        ]
-    },
-    {
-        title: 'Customer Care Representative',
-        location: 'Remote',
-        salary: '20,000 PKR/month',
-        requirements: [
-            'Excellent communication and interpersonal skills.',
-            'Prior experience in customer service or support roles preferred.',
-            'Ability to handle customer inquiries professionally and resolve issues promptly, ensuring high levels of satisfaction.'
-        ]
-    },
-    {
-        title: 'Chapter Face',
-        location: 'On-Site (3 days per week)',
-        salary: '30,000 PKR/month',
-        requirements: [
-            'Confident, personable, and presentable with a strong presence.',
-            'Experience in representing brands or handling public relations.',
-            'Able to engage professionally with clients and partners on behalf of Chapter-001.'
-        ]
+            'Proven experience in managing Google and Meta ad campaigns.',
+            'Strong analytical skills with a data-driven approach.',
+            'Proficiency in campaign setup, optimization, and scaling.',
+            'Excellent communication and collaboration skills.'
+        ],
+
     }
 ];
 
