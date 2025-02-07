@@ -1,9 +1,9 @@
 import Marquee from 'react-fast-marquee';
 import { motion } from "framer-motion"
-import client1 from "@src/assets/TrustedBy/client1.png";
+// import client1 from "@src/assets/TrustedBy/client1.png";
 import client2 from "@src/assets/TrustedBy/client2.png";
 import client3 from "@src/assets/TrustedBy/client3.png";
-import client4 from "@src/assets/TrustedBy/client4.png";
+// import client4 from "@src/assets/TrustedBy/client4.png";
 import client5 from "@src/assets/TrustedBy/client5.png";
 import client6 from "@src/assets/TrustedBy/client6.png";
 // import client7 from "@src/assets/TrustedBy/client7.png";
@@ -16,10 +16,10 @@ import { animationSettings } from '@src/utils/animations';
 
 // Array of logos
 const logos = [
-    client1,
+    // client1,
     client2,
     client3,
-    client4,
+    // client4,
     client5,
     client6,
     // client7,
