@@ -1,7 +1,6 @@
 import { Parallax, ParallaxBanner, ParallaxBannerLayer } from 'react-scroll-parallax'
 import { motion } from 'framer-motion'
 import { pop } from '@src/utils/animations'
-import Triangle from '@src/Components/Triangle'
 
 interface ParallaxSectionProps {
     id: string
@@ -56,9 +55,7 @@ export default function ParallaxSection({
 
                             {/* Desktop layout */}
                             <div className={`hidden lg:flex w-full ${reverse ? 'flex-row-reverse' : 'flex-row'}`}>
-                                <Triangle
-                                    className={`fixed top-8 ${reverse ? '-right-36  -rotate-90' : '-left-36'} hidden md:block`}
-                                />
+                               
                                 <Parallax speed={10} className={`w-1/2 ${reverse ? 'text-right -mr-28' : 'text-left -ml-28'}`}>
                                     <motion.h3
                                         variants={pop}
