@@ -211,6 +211,101 @@ export const marketingPackages: MarketingPackage[] = [
 
     // 02
 
+
+    {
+        name: "Restaurant Marketing Package pro",
+        overview: "Our comprehensive marketing package is designed to help restaurants in Pakistan establish a strong online presence, increase brand awareness, drive sales, and attract new customers.",
+        packageDetails: {
+            duration: "30 days",
+            paymentTerms: ["100% payment in advance"]
+        },
+        packageTiers: {
+            basicPackage: {
+                price: "PKR 125,000",
+                socialMediaManagement: [
+                    "Creation and optimization of social media profiles (Facebook, Instagram)",
+                    "Content creation and posting (4 posts per week)",
+                    "2 Instagram Reels per month",
+                    "Engagement and response management",
+                    "Monthly analytics report"
+                ],
+                brandShoot: [
+                    "1 photoshoot per month (including 10 edited photos)"
+                ],
+                websiteManagement: [
+                    "Website design and development (if needed)",
+                    "Website updates and maintenance",
+                    "Search Engine Optimization (SEO)",
+                    "Monthly analytics report"
+                ],
+                contentCreation: [
+                    "Blog post writing (2 posts per month)",
+                    "Email newsletter creation and sending (1 newsletter per month)"
+                ],
+                foodpandaIntegration: [
+                    "Integration with Foodpanda",
+                    "Menu setup and management",
+                    "Order management and tracking"
+                ],
+                reputationManagement: [
+                    "Online review management",
+                    "Social media monitoring and response",
+                    "Reputation analysis and reporting"
+                ]
+            },
+            premiumPackage: {
+                price: "PKR 200,000",
+                includesAllFrom: "Basic Package",
+                socialMediaManagement: [
+                    "5 posts per week",
+                    "3 Instagram Reels per month"
+                ],
+                brandShoot: [
+                    "2 photoshoots per month (including 20 edited photos)"
+                ],
+                paidAdvertising: [
+                    "Google Ads campaign creation and management",
+                    "Facebook and Instagram ads campaign creation and management",
+                    "Ad copywriting and design",
+                    "Monthly ad spend management (PKR 50,000)",
+                    "Monthly analytics report"
+                ]
+            },
+            elitePackage: {
+                price: "PKR 275,000",
+                includesAllFrom: "Premium Package",
+                socialMediaManagement: [
+                    "7 posts per week",
+                    "4 Instagram Reels per month"
+                ],
+                brandShoot: [
+                    "1 photoshoot per week (including 40 edited photos)"
+                ],
+                paidAdvertising: [
+                    "Monthly ad spend management (PKR 75,000)"
+                ],
+                youtubePublication: [
+                    "YouTube channel creation and optimization",
+                    "Video content creation (1 video per month)",
+                    "Video editing and publishing"
+                ],
+                influencerMarketing: [
+                    "Identification and partnership with influencers in the food industry",
+                    "Influencer content creation and publishing"
+                ]
+            }
+        },
+        whyChooseUs: [
+            "Expert team with years of experience in restaurant marketing",
+            "Proven track record of success",
+            "Customized approach to meet your specific needs",
+            "Cost-effective solution for your marketing needs"
+        ],
+        callToAction: "Contact us to learn more about our marketing package and to schedule a consultation with our marketing expert."
+    },
+
+    // 03
+
     {
         name: "E-commerce Marketing Package",
         overview: "Our comprehensive e-commerce marketing package is designed to help online stores increase brand awareness, drive website traffic, boost sales, and improve customer engagement. Our team of experts will work closely with you to develop a customized marketing strategy that meets your specific needs and goals.",
@@ -299,7 +394,7 @@ export const marketingPackages: MarketingPackage[] = [
     },
 
 
-    // 03
+    // 04
     {
         name: "Real Estate Marketing Pro",
         overview: "Our comprehensive marketing package is designed to help real estate businesses establish a strong online presence, increase brand awareness, drive sales, and generate leads. Our team of experts will manage all aspects of your online marketing.",
@@ -404,8 +499,8 @@ export const marketingPackages: MarketingPackage[] = [
         callToAction: "Contact us to learn more about our marketing package and to schedule a consultation with our marketing expert."
     },
 
+    // 05
 
-    // 04
     {
         name: "Comprehensive Marketing Package for all",
         overview: "Our comprehensive marketing package is designed to provide businesses with a holistic approach to their marketing efforts. This package includes the essential elements of digital marketing, content creation, and reputation management to help businesses establish a strong online presence, drive sales, and attract new customers.",
@@ -552,7 +647,7 @@ export const marketingPackages: MarketingPackage[] = [
     },
 
 
-    // 05
+    // 06
 
     {
         name: "Sales Management Package",
@@ -632,99 +727,9 @@ export const marketingPackages: MarketingPackage[] = [
     },
 
 
-    // 06
 
-    {
-        name: "Restaurant Marketing Package pro",
-        overview: "Our comprehensive marketing package is designed to help restaurants in Pakistan establish a strong online presence, increase brand awareness, drive sales, and attract new customers.",
-        packageDetails: {
-            duration: "30 days",
-            paymentTerms: ["100% payment in advance"]
-        },
-        packageTiers: {
-            basicPackage: {
-                price: "PKR 125,000",
-                socialMediaManagement: [
-                    "Creation and optimization of social media profiles (Facebook, Instagram)",
-                    "Content creation and posting (4 posts per week)",
-                    "2 Instagram Reels per month",
-                    "Engagement and response management",
-                    "Monthly analytics report"
-                ],
-                brandShoot: [
-                    "1 photoshoot per month (including 10 edited photos)"
-                ],
-                websiteManagement: [
-                    "Website design and development (if needed)",
-                    "Website updates and maintenance",
-                    "Search Engine Optimization (SEO)",
-                    "Monthly analytics report"
-                ],
-                contentCreation: [
-                    "Blog post writing (2 posts per month)",
-                    "Email newsletter creation and sending (1 newsletter per month)"
-                ],
-                foodpandaIntegration: [
-                    "Integration with Foodpanda",
-                    "Menu setup and management",
-                    "Order management and tracking"
-                ],
-                reputationManagement: [
-                    "Online review management",
-                    "Social media monitoring and response",
-                    "Reputation analysis and reporting"
-                ]
-            },
-            premiumPackage: {
-                price: "PKR 200,000",
-                includesAllFrom: "Basic Package",
-                socialMediaManagement: [
-                    "5 posts per week",
-                    "3 Instagram Reels per month"
-                ],
-                brandShoot: [
-                    "2 photoshoots per month (including 20 edited photos)"
-                ],
-                paidAdvertising: [
-                    "Google Ads campaign creation and management",
-                    "Facebook and Instagram ads campaign creation and management",
-                    "Ad copywriting and design",
-                    "Monthly ad spend management (PKR 50,000)",
-                    "Monthly analytics report"
-                ]
-            },
-            elitePackage: {
-                price: "PKR 275,000",
-                includesAllFrom: "Premium Package",
-                socialMediaManagement: [
-                    "7 posts per week",
-                    "4 Instagram Reels per month"
-                ],
-                brandShoot: [
-                    "1 photoshoot per week (including 40 edited photos)"
-                ],
-                paidAdvertising: [
-                    "Monthly ad spend management (PKR 75,000)"
-                ],
-                youtubePublication: [
-                    "YouTube channel creation and optimization",
-                    "Video content creation (1 video per month)",
-                    "Video editing and publishing"
-                ],
-                influencerMarketing: [
-                    "Identification and partnership with influencers in the food industry",
-                    "Influencer content creation and publishing"
-                ]
-            }
-        },
-        whyChooseUs: [
-            "Expert team with years of experience in restaurant marketing",
-            "Proven track record of success",
-            "Customized approach to meet your specific needs",
-            "Cost-effective solution for your marketing needs"
-        ],
-        callToAction: "Contact us to learn more about our marketing package and to schedule a consultation with our marketing expert."
-    },
+
+
 
 ]
 

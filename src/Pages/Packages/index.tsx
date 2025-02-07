@@ -114,16 +114,6 @@ const Packages: React.FC = () => {
                                         </ul>
                                     </div>
                                 )}
-                                {pkg.packageTiers?.includes && (
-                                    <div className="mb-4">
-                                        <h3 className="text-xl font-semibold text-white mb-2">Includes</h3>
-                                        <ul className="list-disc list-inside text-gray-300">
-                                            {pkg.packageTiers?.includes?.map((includes: string) => (
-                                                <li key={includes}>{includes}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
 
                                 {pkg.performanceGuarantee && (
                                     <p className="text-green-400 font-semibold mb-4">
@@ -162,7 +152,7 @@ const Packages: React.FC = () => {
                                                     <h3 className="text-xl font-semibold text-white mb-2">Components</h3>
                                                     {Object.entries(pkg.components).map(([key, value]) => (
                                                         <div key={key} className="mb-2">
-                                                            <h4 className="text-lg font-semibold text-white">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                                                            <h4 className="text-lg font-semibold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
                                                             <ul className="list-disc list-inside">
                                                                 {value?.map((item, i) => (
                                                                     <li key={i}>{item}</li>
@@ -178,11 +168,41 @@ const Packages: React.FC = () => {
                                                     <h3 className="text-xl font-semibold text-white mb-2">Package Options</h3>
                                                     {Object.entries(pkg.packageOptions).map(([key, value]) => (
                                                         <div key={key} className="mb-2">
-                                                            <h4 className="text-lg font-semibold text-white">{key}</h4>
+                                                            <h4 className="text-lg font-semibold text-white capitalize">{key}</h4>
                                                             <p>Pricing: {value.pricing.setupFee ? `Setup Fee: ${value.pricing.setupFee}, ` : ''}
                                                                 {value.pricing.monthlyRetainer ? `Monthly Retainer: ${value.pricing.monthlyRetainer}, ` : ''}
                                                                 {value.pricing.commission ? `Commission: ${value.pricing.commission}` : ''}</p>
                                                             {value.minimumAdSpend && <p>Minimum Ad Spend: {value.minimumAdSpend}</p>}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+
+                                            {pkg.packageTiers && (
+                                                <div className="mb-4">
+                                                    <h3 className="text-xl font-semibold text-white mb-2">Package Tiers</h3>
+                                                    {Object.entries(pkg.packageTiers).map(([key, value]) => (
+                                                        <div key={key} className="mb-2">
+                                                            <h4 className="text-lg font-semibold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                                                            <p className="text-gray-300">Price: {value.price}</p>
+                                                            {value.includesAllFrom && (
+                                                                <p className="text-gray-300">Includes all from: {value.includesAllFrom}</p>
+                                                            )}
+                                                            {Object.entries(value).map(([subKey, subValue]) => {
+                                                                if (Array.isArray(subValue) && subKey !== 'includesAllFrom') {
+                                                                    return (
+                                                                        <div key={subKey} className="mt-2">
+                                                                            <h5 className="text-md font-semibold text-white capitalize">{subKey.replace(/([A-Z])/g, ' $1').trim()}</h5>
+                                                                            <ul className="list-disc list-inside">
+                                                                                {subValue.map((item, i) => (
+                                                                                    <li key={i}>{item}</li>
+                                                                                ))}
+                                                                            </ul>
+                                                                        </div>
+                                                                    )
+                                                                }
+                                                                return null
+                                                            })}
                                                         </div>
                                                     ))}
                                                 </div>
@@ -215,6 +235,31 @@ const Packages: React.FC = () => {
                                                             <li key={i}>{reason}</li>
                                                         ))}
                                                     </ul>
+                                                </div>
+                                            )}
+
+                                            {pkg.packageDetails && (
+                                                <div className="mb-4">
+                                                    <h3 className="text-xl font-semibold text-white mb-2">Package Details</h3>
+                                                    {pkg.packageDetails.duration && (
+                                                        <p className="text-gray-300">Duration: {pkg.packageDetails.duration}</p>
+                                                    )}
+                                                    {pkg.packageDetails.paymentTerms && (
+                                                        <div>
+                                                            <h4 className="text-lg font-semibold text-white">Payment Terms</h4>
+                                                            <ul className="list-disc list-inside">
+                                                                {pkg.packageDetails.paymentTerms.map((term, i) => (
+                                                                    <li key={i}>{term}</li>
+                                                                ))}
+                                                            </ul>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            )}
+
+                                            {pkg.callToAction && (
+                                                <div className="mb-4">
+                                                    <p className="text-white font-semibold">{pkg.callToAction}</p>
                                                 </div>
                                             )}
                                         </motion.div>
