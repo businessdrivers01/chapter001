@@ -6,6 +6,7 @@ import LandingPage from '@src/Pages/LandingPage';
 import { lazy, Suspense } from 'react';
 import { Loader } from 'lucide-react';
 
+
 // Lazy load other pages for better performance
 const About = lazy(() => import('@src/Pages/About'));
 const Services = lazy(() => import('@src/Pages/Services'));
@@ -14,6 +15,7 @@ const Contact = lazy(() => import('@src/Pages/Contact'));
 const NotFound = lazy(() => import('@src/Pages/NotFound'));
 const Blogs = lazy(() => import('@src/Pages/Blogs'));
 const Careers = lazy(() => import('@src/Pages/Careers'));
+const Packages = lazy(() => import('@src/Pages/Packages'));
 
 // Loading component for suspense fallback
 const PageLoader: FC = () => (
@@ -40,16 +42,17 @@ const Routes: FC = (): JSX.Element => {
                         <Layout />
                     }
                 >
-                        <Route path="" element={<LandingPage />} />
-                        <Route path="/about" element={<About />} />
-                        <Route path="/services" element={<Services />} />
-                        <Route path="/blogs" element={<Blogs />} />
-                        <Route path="/careers" element={<Careers />} />
-                        <Route path="/contact" element={<Contact />} />
-                        {/* 404 route */}
-                        <Route path="/404" element={<NotFound />} />
-                        {/* Redirect unknown routes to 404 */}
-                        <Route path="*" element={<Navigate to="/404" replace />} />
+                    <Route path="" element={<LandingPage />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/blogs" element={<Blogs />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/packages" element={<Packages />} />
+                    {/* 404 route */}
+                    <Route path="/404" element={<NotFound />} />
+                    {/* Redirect unknown routes to 404 */}
+                    <Route path="*" element={<Navigate to="/404" replace />} />
 
                 </Route>
             </RouterRoutes>

@@ -7,7 +7,7 @@ interface ButtonProps {
     link?: string;
     isSmall?: boolean;
     background?: string; // You can specify a background color here
-    onClick?: () => {};
+    onClick?: () => void;
     className?: string
 }
 
