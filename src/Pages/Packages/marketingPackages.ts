@@ -351,7 +351,7 @@ export const marketingPackages: MarketingPackage[] = [
                 "Minimum 1 deal closure guarantee"
             ]
         },
-        pricing: {
+        packageTiers: {
             basicPackage: {
                 price: "PKR 175,000/month",
                 includes: [
@@ -726,8 +726,6 @@ export const marketingPackages: MarketingPackage[] = [
         callToAction: "Contact us to learn more about our marketing package and to schedule a consultation with our marketing expert."
     },
 
-
-    // Add remaining objects here following the same structure
 ]
 
 
