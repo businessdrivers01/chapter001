@@ -71,10 +71,15 @@ const Packages: React.FC = () => {
                                     <div className="mb-4">
                                         <h3 className="text-xl font-semibold text-white mb-2">Pricing</h3>
                                         {pkg.pricing.onboardingCharges && (
-                                            <p className="text-gray-300">Onboarding Charges: {pkg.pricing.onboardingCharges}</p>
+                                            <p className="text-gray-300">Onboarding Charges:<span className='font-bold'> {pkg.pricing.onboardingCharges}</span>
+                                            </p>
                                         )}
                                         {pkg.pricing.commission && (
-                                            <p className="text-gray-300">Commission: {pkg.pricing.commission}</p>
+                                            <p className="text-gray-300">Commission: <span
+                                                className='font-bold'
+                                            >{pkg.pricing.commission}</span>
+
+                                            </p>
                                         )}
                                     </div>
                                 )}
@@ -83,8 +88,8 @@ const Packages: React.FC = () => {
                                         <h3 className="text-xl font-semibold text-white mb-2">Package Options</h3>
                                         {Object.entries(pkg.packageOptions).map(([key, value]) => (
                                             <div key={key} className="mb-2">
-                                                <h4 className="text-lg font-semibold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
-                                                <p className="text-gray-300">
+                                                <h4 className="text-lg text-white capitalize font-bold">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                                                <p className="text-gray-300 font-bold">
                                                     {value.pricing.setupFee && `Setup Fee: ${value.pricing.setupFee}`}
                                                     {value.pricing.commission && `, Commission: ${value.pricing.commission}`}
                                                 </p>
@@ -94,11 +99,11 @@ const Packages: React.FC = () => {
                                 )}
                                 {pkg.packageTiers && (
                                     <div className="mb-4">
-                                        <h3 className="text-xl font-semibold text-white mb-2">Package Tiers</h3>
+                                        <h3 className="text-xl font-bold text-white mb-2">Package Tiers</h3>
                                         {Object.entries(pkg.packageTiers).map(([key, value]) => (
                                             <div key={key} className="mb-2">
                                                 <h4 className="text-lg font-semibold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
-                                                <p className="text-gray-300">Price: {value.price}</p>
+                                                <p className="text-gray-300 font-bold">Price: {value.price}</p>
                                             </div>
                                         ))}
                                     </div>
@@ -168,7 +173,7 @@ const Packages: React.FC = () => {
                                                     <h3 className="text-xl font-semibold text-white mb-2">Package Options</h3>
                                                     {Object.entries(pkg.packageOptions).map(([key, value]) => (
                                                         <div key={key} className="mb-2">
-                                                            <h4 className="text-lg font-semibold text-white capitalize">{key}</h4>
+                                                            <h4 className="text-lg font-bold text-white capitalize">{key}</h4>
                                                             <p>Pricing: {value.pricing.setupFee ? `Setup Fee: ${value.pricing.setupFee}, ` : ''}
                                                                 {value.pricing.monthlyRetainer ? `Monthly Retainer: ${value.pricing.monthlyRetainer}, ` : ''}
                                                                 {value.pricing.commission ? `Commission: ${value.pricing.commission}` : ''}</p>
@@ -183,8 +188,8 @@ const Packages: React.FC = () => {
                                                     <h3 className="text-xl font-semibold text-white mb-2">Package Tiers</h3>
                                                     {Object.entries(pkg.packageTiers).map(([key, value]) => (
                                                         <div key={key} className="mb-2">
-                                                            <h4 className="text-lg font-semibold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
-                                                            <p className="text-gray-300">Price: {value.price}</p>
+                                                            <h4 className="text-lg font-bold text-white capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</h4>
+                                                            <p className="text-gray-300 font-bold">Price: {value.price}</p>
                                                             {value.includesAllFrom && (
                                                                 <p className="text-gray-300">Includes all from: {value.includesAllFrom}</p>
                                                             )}
