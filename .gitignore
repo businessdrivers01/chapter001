@@ -7,9 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+
+# Hintrc
+.hintrc
+
+# Node modules
 node_modules
+
+# Dist
 dist
 dist-ssr
+
 *.local
 
 # Editor directories and files
